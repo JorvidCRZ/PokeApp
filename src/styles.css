@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --negro: #000;
+    --rojo: #F22539;
+    --rojoOsb: #C00E20;
+    --amarillo: #ECA539;
+    --gris: #BFBFBF;
+    --plomo: #5E5E5E;
+    --plomoOsb: #353535;
+    --blanco: #F9F9F9;
+    --blancoSucio: #F5F5F5;
+    --blancoMuySucio: #E8E8E8;
+}
+body {
+  background-color: var(--blancoSucio)!important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lato;
+}   
+.container{
+  background-color: var(--blancoSucio)!important;
+}
+
+h1::selection, h2::selection,h3::selection,span::selection,img::selection,p::selection,li::selection{
+background-color: var(--amarillo);
+color: var(--rojo);
+}
+
+app-navegador {
+  margin: 0; 
+  padding: 0; 
+}
+

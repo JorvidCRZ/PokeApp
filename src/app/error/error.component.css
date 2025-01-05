@@ -1,0 +1,33 @@
+h3{
+  margin:1rem ;
+  color: var(--plomo);
+  font-size: 36px;
+  font-weight: 500;
+}
+  
+h1{
+  font-size: 50px;
+  color: var(--plomoOsb);
+  font-weight: 700;
+  margin: 2rem 1rem;
+}
+
+.boton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 60px;
+  margin: 1rem 3rem 0;
+  padding: 11px 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  background-color: var(--rojo);
+}
+
+.boton:hover{
+  color: var(--blancoSucio);
+  background-color: var(--rojoOsb);
+}

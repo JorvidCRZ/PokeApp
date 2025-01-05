@@ -1,0 +1,76 @@
+
+.container {
+    width: 100vh;
+    height: 40vw;
+    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+}
+
+.logocarga{
+    width: 20%;
+    display: flex;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100%;
+    background-color: transparent !important;
+    animation: rotate 2s linear infinite;
+
+}
+
+.logocarga:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+    filter: contrast(1.5);
+    box-shadow: 5px 5px 10px var(--amarillo);;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cargandoTexto {
+    font-size: 4rem;
+    margin-left: 3rem;
+    font-weight: bold;
+    color: var(--rojo);
+    text-shadow: 3px 1px 5px var(--amarillo);
+}
+
+.cargandoTexto:hover{
+    cursor: pointer;
+    color: var(--amarillo);
+    text-shadow: 3px 1px 5px var(--rojo);
+}
+
+.letra {
+    display: inline-block;
+    animation: moveDown 1s ease-in-out infinite;
+}
+
+.letra.pares {
+    animation-delay: 0.02s; 
+}
+
+.letra.impares {
+    animation-delay: 0s; 
+}
+
+@keyframes moveDown {
+    0%, 100% {
+        transform: translateY(15px);
+    }
+    50% {
+        transform: translateY(-15px); 
+    }
+}
+

@@ -1,0 +1,27 @@
+.boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 60px;
+    margin-top: 1rem;
+    padding: 11px 20px;
+    font-weight: 500;
+    color: var(--blanco);
+    background-color: var(--gris);
+  }
+  i{
+    font-size: 30px;
+    margin-right: 20px;
+    font-weight: 900;
+  }
+  .boton:hover{
+    background-color: var(--rojoOsb);
+  }
+
+  .boton-activo{
+    background-color: var(--rojo); 
+    color: var(--blanco);
+  }

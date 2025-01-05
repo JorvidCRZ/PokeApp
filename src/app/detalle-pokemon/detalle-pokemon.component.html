@@ -1,0 +1,28 @@
+<div class="containers" *ngIf="showContainer">
+  <app-carga *ngIf="loading" class="carga"></app-carga>
+  <div *ngIf="!loading" class="card">
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeContainer()"></button>
+    <button type="button" class="shiny" (click)="clickShiny()" ><i class="bi bi-bug-fill" [ngClass]="{ 'shiny-active': mostrarShiny}"></i></button>
+    <div class="fondo">
+      <img [src]="mostrarShiny ? pokemon?.sprites?.front_shiny : pokemon?.sprites?.front_default" loading="lazy" class="img-pokemon" [alt]="pokemon?.name"
+  />
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name:<span class="span">{{ pokemon?.name }}</span> </li>
+        <li class="list-group-item">Weight:<span class="span">{{ pokemon?.weight }}</span></li>
+        <li class="list-group-item">Height:<span class="span">{{ pokemon?.height }}</span> </li>
+        <li class="list-group-item"> Types: <span class="span" *ngFor="let type of pokemon?.types; let last = last ">
+            {{ type.type.name }}<span *ngIf="!last">, </span>
+          </span></li>  
+      </ul>
+      <div class="footer-card">
+        <button type="button" class="btn boton" id="liveAlertBtn" (click)="shareToFriends()">Share to my friends</button>
+        <i class="bi bi-star-fill star" [ngClass]="{ 'star-active': _pokemonService.esFavorito(pokemon?.id || 0) }" (click)="toggleFavorito()"></i>
+      </div>
+      <p *ngIf="shiny" class="alert mt-3" [ngClass]="isActive ? 'alert-warning' : 'alert-secondary'">{{ shiny }}</p>
+      <p *ngIf="share" class="alert alert-primary mt-3">{{ share }}</p>
+      <p *ngIf="Message" class="alert mt-3" class="alert mt-3" [ngClass]="{'alert-success': isActive, 'alert-danger': !isActive}">{{ Message }}</p>
+    </div>
+  </div>
+</div>

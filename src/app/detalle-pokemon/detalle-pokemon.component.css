@@ -1,0 +1,160 @@
+.containers{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-self:center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.fondo{
+  position: relative;
+  background: url(../../../public/fondo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: var(--blanco);
+  z-index: 1000;
+}
+
+.span{
+  margin-left: 10px;
+  color: var(--plomo);
+  font-weight: 500;
+}
+.span::first-letter{
+  text-transform: uppercase;
+}
+
+i{
+  padding-left: 10px;
+  font-size: 30px !important;
+  color: var(--gris);
+  z-index: 100;
+}
+
+i:hover{
+  color: var(--amarillo);
+  cursor: pointer;
+}
+
+ul{
+  width: 100%;
+}
+
+ul li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid var(--gris);
+  font-weight: 700 !important;
+  color:var(--plomoOsb);
+}
+
+.img-pokemon{
+  width: 100% !important;
+  height: 20vw;
+  object-fit: contain;
+  position: relative;
+  top: 10%;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.img-pokemon:hover{
+  transform: scale(1.1);
+  transition: transform 0.5s;
+  filter: contrast(1.5);
+}
+
+.shiny{
+  width: fit-content;
+  height: fit-content;
+  background: transparent;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  border: none;
+  cursor: pointer;
+}
+
+.shiny i:hover{
+  color: var(--amarillo);
+} 
+
+.shiny-active{
+  color: var(--amarillo);
+}
+
+.boton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+  font-size: 20px;
+  border-radius: 60px;
+  padding: 11px 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  background-color: var(--rojo);
+  cursor: pointer;
+}
+  
+.boton:hover{
+  color: var(--blancoSucio);
+  background-color: var(--rojoOsb);
+}
+
+.card-body{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-card{
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card{
+  width: 35vw !important;
+}
+
+.star-active{
+  color: var(--amarillo);
+}
+
+.alert{
+  text-align: center;
+  font-size: 1.2em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  padding: 10px;
+  border-radius: 5px;
+}

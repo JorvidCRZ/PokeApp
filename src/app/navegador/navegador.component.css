@@ -1,0 +1,200 @@
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box; 
+  width: 100%; 
+  height: 100%;
+  padding: 0; 
+  border: none;
+}
+.barra{
+  justify-content: center;
+}
+
+.container,app-error{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  place-self: center;
+}
+.boton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 60px;
+  margin: 1rem 3rem 0;
+  padding: 11px 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  background-color: var(--rojo);
+}
+
+.boton:hover{
+  color: var(--blancoSucio);
+  background-color: var(--rojoOsb);
+}
+
+.navbar{
+  padding: 2rem 1rem;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+app-carga {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.placeholder::placeholder{
+  color: var(--gris);
+}
+.placeholder:hover{
+  background-color: var(--amarillo);
+}
+
+.input-search{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 60%;
+  position: absolute;
+  height: 50px;
+  padding: 11px 60px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--negro);
+  border:none;
+  cursor: pointer;
+  margin: 0 !important;
+}
+
+.sgv{
+  position: relative;
+  color: var(--plomo);
+  z-index: 3;
+  left: -28%;
+}
+.conten{
+  display: grid;
+  justify-content: center;
+}
+
+.footer{
+  background-color: var(--blancoSucio)!important;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100% !important;
+  height: 6rem;
+  padding: 1rem;
+  z-index: 1000; 
+  left: 0;
+  box-shadow: 0 -3px 5px -3px var(--plomo);
+
+}
+
+.lista{
+  width: 100%;
+  place-items: center;
+}
+
+.listapokemons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin-bottom:0.5rem;
+}
+
+.listapokemons:hover{
+  background-color: var(--blanco);
+  cursor: pointer;
+}
+
+.pokenombre{
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 25px !important;
+  font-weight: 500;
+  color: var(--plomoOsb);
+}
+
+.ultimo{
+  margin-bottom: 5rem;
+  background-color: transparent  !important;
+  border: none;
+}
+
+.pokenombre::first-letter{
+  text-transform: capitalize;
+}
+
+.pokenombre:hover{
+  color: var(--amarillo);
+}
+
+.contenedor-estrella{
+  background-color: var(--blancoSucio);
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  position: relative;
+}
+
+.estrella{
+  color: var(--gris);
+  font-size: 25px;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.estrella:hover{
+  color: var(--amarillo);
+  cursor: pointer;
+}
+
+.star-active{
+  color: var(--amarillo);
+}
+
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contendor-pokenombre{
+  width: 100%;
+}
+
+@media screen and (min-width: 1600px) {
+  .footer{
+    width: 70%;
+  }
+}
+

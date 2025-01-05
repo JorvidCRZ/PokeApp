@@ -1,0 +1,12 @@
+<div class="container">
+  <img src="pokeball.png" alt="logocarga" class="logocarga" />
+  <h2 class="cargandoTexto">
+    <span
+      *ngFor="let letra of letras; let i = index"
+      class="letra"
+      [ngClass]="{ pares: i % 2 === 0, impares: i % 2 !== 0 }"
+    >
+      {{ letra }}
+    </span>
+  </h2>
+</div>

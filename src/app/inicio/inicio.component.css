@@ -1,0 +1,147 @@
+.contenedor{
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo{
+    position: absolute;
+    top: 55.5%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    height: 13.5rem;
+    width: 13.5rem;
+    border-radius: 50%;
+    background-color: var(--rojo);
+    border: 3px solid var(--negro);
+    animation: colorChange 5s infinite alternate; 
+}
+
+.pikachu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit:cover;
+    width: 21vw;
+    height: 18vw;
+}
+
+.pikachu:hover {
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 2px var(--negro)) contrast(1.2);;
+}
+
+.contenedor:hover .circulo {
+    background-color: var(--rojoOsb); 
+    filter: drop-shadow(5px 5px 2px var(--negro)); 
+}
+
+.container{
+    display: flex;
+    place-self: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 60px;
+    margin-top: 3rem;
+    padding: 11px 20px;
+    font-weight: 500;
+    color: var(--blanco);
+    background-color: var(--rojo);
+}
+
+.boton:hover{
+    color: var(--blancoSucio);
+    background-color: var(--rojoOsb);
+}
+
+.contenedorTexto{
+    display:block;
+    place-items: center;
+}
+h1{
+    color: var(--plomoOsb);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+h3{
+    color: var(--plomo);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.electric-spark1,.electric-spark2 {
+    position: absolute;
+    top: 53%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgb(255, 255, 0), transparent);
+    border-radius: 50%;
+    animation: spark 1s infinite;
+}
+.electric-spark1 {
+    left: 38%;
+}
+.electric-spark2 {
+    left: 53%;
+}
+.electric-spark1:hover,.electric-spark2:hover{
+    filter: drop-shadow(10px 10px 10px #0080ff);
+    animation: rotate 2s linear infinite;
+    cursor: pointer;
+} 
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spark {
+    0%, 100% { transform: scale(1); opacity: 0; }
+    50% { transform: scale(2); opacity: 1; }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: var(--rojo);
+    }
+    25% {
+        background-color: var(--rojoOsb);
+    }
+    50% {
+        background-color: var(--amarillo);
+    }
+    75% {
+        background-color: var(--blanco);
+    }
+    100% {
+        background-color: var(--plomo);
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .circulo {
+        top: 57.1%;
+        left: 48.5%;
+    }
+}

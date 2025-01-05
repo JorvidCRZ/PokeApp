@@ -1,0 +1,29 @@
+<div class="container">
+  @if(carga){
+    <app-carga />
+  } @if(!carga){
+  <div class="contenedor">
+    <div class="circulo"></div>
+    <img class="pikachu" src="Logo.png" alt="logoPikachu" loading="lazy"/>
+    <div class="electric-spark1"></div>   
+    <div class="electric-spark2"></div>   
+  </div>
+  <div class="container contenedorTexto">
+    <h1>Welcome to Pokédex</h1>
+    <div class="container container-m-3-fluid">
+      <h3>
+        The digital encyclopedia created by Professor Oak is an invaluable tool
+      </h3>
+      <h3>to Trainers in the Pokémon world.</h3>
+      <button
+        type="button"
+        class="btn boton"
+        routerLink="/navegador"
+        routerLinkActive="active"
+      >
+        Get started
+      </button>
+    </div>
+  </div>
+}
+</div>

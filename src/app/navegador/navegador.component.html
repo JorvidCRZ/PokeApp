@@ -1,0 +1,37 @@
+<div class="container contenedor p-0 m-0">
+  <app-carga *ngIf="carga"></app-carga>
+  <div *ngIf="!carga" class="container-fluid navbar barra">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="sgv bi bi-search" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+    </svg>
+    <input (click)="cambiar()" (keyup.enter)="buscarPorEnter($event)" class="{{placeholderClass}} form-control me-2 input-search" type="search" [placeholder]="textPlaceholder" aria-label="Search"/>
+  </div>
+  <div *ngIf="busquedaFallida && !carga" class="container contenido">
+    <app-error/>
+  </div>
+  <div *ngIf="!carga" class="container conten p-0 m-0">
+    <div class="container listapokemon" *ngIf="currentView === 'all' || currentView === 'search'">
+        <ul class="list-group lista" *ngIf="pokemonList.length > 0">
+          <li class="list-group-item listapokemons" *ngFor="let pokemon of pokemonList; let i = index;">
+            <p *ngIf="Message[pokemon.id]" class="alert mt-3" 
+            [ngClass]="{'alert-success': _pokemonService.esFavorito(pokemon.id), 'alert-danger': !_pokemonService.esFavorito(pokemon.id)}">
+           {{ Message[pokemon.id] }}
+            </p>
+            <div class="d-flex justify-content-between contendor-pokenombre"  (click)="seleccionarPokemon(pokemon.id)">
+              <p class="pokenombre">{{ pokemon.name }}</p>
+            </div>   
+            <div class="contenedor-estrella" (click)="SaveToFavorites(pokemon.id,pokemon.name)">
+              <i class="bi bi-star-fill estrella" 
+              [ngClass]="{'star-active': _pokemonService.esFavorito(pokemon.id)}"></i>
+            </div>     
+          </li>
+          <li *ngIf="pokemonList.length > 0" class="list-group-item listapokemons ultimo"></li>
+        </ul>
+    </div>
+    <footer class="footer">
+      <app-lista-todo (pokemonsLoaded)="onPokemonsLoaded($event)" (mostrarEvent)="toggleListaTodo()"></app-lista-todo>
+      <button class="btn boton" routerLink="" routerLinkActive="active">Return</button>
+      <app-lista-favorito (pokemonsLoaded)="onPokemonsLoaded($event)" (click)="mostrarFavoritos()"></app-lista-favorito>
+    </footer>
+  </div>
+</div>
