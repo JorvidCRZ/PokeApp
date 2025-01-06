@@ -10,8 +10,12 @@ export interface Pokemon {
   }
 }
 
+export interface PokemonGeneral {
+  name: string; url: string, id?: number 
+}
+
 export interface PokemonResponse {
-  results: { name: string; url: string }[];  
+  results: PokemonGeneral[];  
 }
 
 export interface Type {

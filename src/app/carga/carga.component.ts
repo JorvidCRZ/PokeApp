@@ -11,6 +11,4 @@ import { Component} from '@angular/core';
 export class CargaComponent   {
     texto = 'Cargando...';
     letras = this.texto.split('');
-    
-
 }

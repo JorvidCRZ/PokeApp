@@ -1,10 +1,10 @@
-import { Component, Input, OnInit,inject } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
 import { ActivatedRoute } from '@angular/router';
 import { ApiPokemonService } from '../services/api-pokemon.service';
 import { CargaComponent } from '../carga/carga.component';
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { PokemonServiceService } from '../services/pokemon-service.service';
 
 @Component({
@@ -12,12 +12,10 @@ import { PokemonServiceService } from '../services/pokemon-service.service';
   selector: 'app-detalle-pokemon',
   imports: [CargaComponent,NgIf,NgFor,NgClass],
   templateUrl: './detalle-pokemon.component.html',
-  styleUrl: './detalle-pokemon.component.css'
+  styleUrls: ['./detalle-pokemon.component.css']
 })
 export class DetallePokemonComponent implements OnInit {
   _pokemonService = inject(PokemonServiceService);
-
- 
   loading: boolean = true;
   public pokemon?: Pokemon; 
   mostrarShiny: boolean = false;
@@ -52,7 +50,11 @@ export class DetallePokemonComponent implements OnInit {
 
   toggleFavorito(): void {
     if (this.pokemon) {
-      this._pokemonService.toggleFavorito(this.pokemon);
+      this._pokemonService.toggleFavorito({
+        name: this.pokemon.name,
+        url: 'https://pokeapi.co/api/v2/pokemon/' + this.pokemon.id,
+        id: this.pokemon.id
+      });
       this.isActive = this._pokemonService.esFavorito(this.pokemon.id); 
       this.Message = this.isActive
         ? `The Pokémon ${this.pokemon?.name} was saved in favorites`

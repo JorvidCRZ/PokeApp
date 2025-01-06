@@ -10,19 +10,19 @@
     <app-error/>
   </div>
   <div *ngIf="!carga" class="container conten p-0 m-0">
-    <div class="container listapokemon" *ngIf="currentView === 'all' || currentView === 'search'">
+    <div class="container listapokemon">
         <ul class="list-group lista" *ngIf="pokemonList.length > 0">
           <li class="list-group-item listapokemons" *ngFor="let pokemon of pokemonList; let i = index;">
-            <p *ngIf="Message[pokemon.id]" class="alert mt-3" 
-            [ngClass]="{'alert-success': _pokemonService.esFavorito(pokemon.id), 'alert-danger': !_pokemonService.esFavorito(pokemon.id)}">
-           {{ Message[pokemon.id] }}
+            <p *ngIf="Message[pokemon.id!]" class="alert mt-3" 
+            [ngClass]="{'alert-success': _pokemonService.esFavorito(pokemon.id!), 'alert-danger': !_pokemonService.esFavorito(pokemon.id!)}">
+           {{ Message[pokemon.id!] }}
             </p>
-            <div class="d-flex justify-content-between contendor-pokenombre"  (click)="seleccionarPokemon(pokemon.id)">
+            <div class="d-flex justify-content-between contendor-pokenombre"  (click)="seleccionarPokemon(pokemon.id!)">
               <p class="pokenombre">{{ pokemon.name }}</p>
             </div>   
-            <div class="contenedor-estrella" (click)="SaveToFavorites(pokemon.id,pokemon.name)">
+            <div class="contenedor-estrella" (click)="SaveToFavorites(pokemon)">
               <i class="bi bi-star-fill estrella" 
-              [ngClass]="{'star-active': _pokemonService.esFavorito(pokemon.id)}"></i>
+              [ngClass]="{'star-active': _pokemonService.esFavorito(pokemon.id!)}"></i>
             </div>     
           </li>
           <li *ngIf="pokemonList.length > 0" class="list-group-item listapokemons ultimo"></li>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pokemon } from '../models/pokemon.model';
+import { PokemonGeneral } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +7,12 @@ import { Pokemon } from '../models/pokemon.model';
 export class PokemonServiceService {
   private localStorageKey = 'listaPokemon';
 
-  getPokemon(): Pokemon[] {
+  getPokemon(): PokemonGeneral[] {
     const pokemons = localStorage.getItem(this.localStorageKey);
     return pokemons ? JSON.parse(pokemons) : [];
   }
 
-  agregarPokemon(pokemon: Pokemon): void {
+  agregarPokemon(pokemon: PokemonGeneral): void {
     const pokemons = this.getPokemon();
     if (!pokemons.some(p => p.id === pokemon.id)) {
       pokemons.push(pokemon);
@@ -31,12 +31,11 @@ export class PokemonServiceService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(updatedPokemons));
   }
 
-  toggleFavorito(pokemon: Pokemon): void {
-    if (this.esFavorito(pokemon.id)) {
-      this.eliminarPokemon(pokemon.id);
+  toggleFavorito(pokemon: PokemonGeneral): void {
+    if (this.esFavorito(pokemon.id!)) {
+      this.eliminarPokemon(pokemon.id!);
     } else {
       this.agregarPokemon(pokemon);
     }
   }
 }
-

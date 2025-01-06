@@ -10,11 +10,9 @@ import { CargaComponent } from '../carga/carga.component';
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
+
 export class InicioComponent implements OnInit{
-
   carga: boolean = true;
-
-
   ngOnInit(): void {
     setTimeout(() => {
       this.carga = false;

@@ -9,7 +9,4 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class ErrorComponent {
   private _router = inject(Router);
-
-  
-  
 }
