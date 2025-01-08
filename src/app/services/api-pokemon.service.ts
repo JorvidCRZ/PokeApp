@@ -12,7 +12,7 @@ export class ApiPokemonService {
   private _http = inject(HttpClient);
   private _urlEndPoint: string = environment.apiUrl
 
-  getAllPokemons(limit: number = 1000): Observable<PokemonResponse> {
+  getAllPokemons(limit: number = 200): Observable<PokemonResponse> {
     return this._http.get<PokemonResponse>(`${this._urlEndPoint}pokemon?limit=${limit}`);
   }
 
