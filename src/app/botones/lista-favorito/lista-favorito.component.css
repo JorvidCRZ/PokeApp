@@ -1,27 +1,62 @@
 .boton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 250px;
-    font-size: 20px;
-    border-radius: 60px;
-    margin-top: 1rem;
-    padding: 11px 20px;
-    font-weight: 500;
-    color: var(--blanco);
-    background-color: var(--gris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+  font-size: 20px;
+  border-radius: 60px;
+  margin-top: 1rem;
+  padding: 11px 20px;
+  font-weight: 500;
+  color: var(--blanco);
+  background-color: var(--gris);
+}
+
+i{
+  margin-right: 20px;
+  font-weight: 900;
+}
+
+.boton:hover{
+  background-color: var(--rojoOsb);
+}
+
+.boton-activo{
+  background-color: var(--rojo); 
+  color: var(--blanco);
+}
+
+  
+@media screen and (min-width: 2000px) and (max-width: 3000px) {
+  .boton{
+    height: 70px;
+    width: 270px;
+    font-size: 30px;
   }
   i{
-    margin-right: 20px;
-    font-weight: 900;
+    font-size: 30px;
   }
-  
-  .boton:hover{
-    background-color: var(--rojoOsb);
+}
+
+@media screen and (max-width: 1025px) {
+  .boton{
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    margin:0;
   }
 
-  .boton-activo{
-    background-color: var(--rojo); 
-    color: var(--blanco);
+  i{
+    font-size: 20px;
   }
+}
+
+@media screen and (max-width: 426px) {
+  .boton{
+    width: 75vw !important;
+  }
+  i{
+    font-size: 18px;
+  }
+}

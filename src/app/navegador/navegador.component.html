@@ -27,11 +27,22 @@
           </li>
           <li *ngIf="pokemonList.length > 0" class="list-group-item listapokemons ultimo"></li>
         </ul>
-    </div>
+      </div>
+
     <footer class="footer">
-      <app-lista-todo (pokemonsLoaded)="onPokemonsLoaded($event)" (mostrarEvent)="toggleListaTodo()"></app-lista-todo>
+      <app-lista-todo 
+      (pokemonsLoaded)="onPokemonsLoaded($event)" 
+      (mostrarEvent)="toggleLista('todo')"
+      [botonTodoActivo]="botonTodoActivo" 
+      [ngClass]="{'active': botonTodoActivo}">
+    </app-lista-todo>
       <button class="btn boton" routerLink="" routerLinkActive="active">Return</button>
-      <app-lista-favorito (pokemonsLoaded)="onPokemonsLoaded($event)" (click)="mostrarFavoritos()"></app-lista-favorito>
+      <app-lista-favorito 
+      (pokemonsLoaded)="onPokemonsLoaded($event)" 
+      (mostrarEvent)="toggleLista('favoritos')"
+      [botonFavoritoActivo]="botonFavoritoActivo" 
+      [ngClass]="{'active': botonFavoritoActivo}">
+    </app-lista-favorito>
     </footer>
   </div>
 </div>

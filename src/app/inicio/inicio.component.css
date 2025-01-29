@@ -74,6 +74,7 @@
     display:block;
     place-items: center;
 }
+
 h1{
     color: var(--plomoOsb);
     margin-bottom: 2rem;
@@ -84,6 +85,7 @@ h3{
     color: var(--plomo);
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .electric-spark1,.electric-spark2 {
@@ -138,10 +140,136 @@ h3{
         background-color: var(--plomo);
     }
 }
-
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 2000px) { 
     .circulo {
-        top: 57.1%;
-        left: 48.5%;
+        height: 28.5vh;
+        width: 28.5vh;
+    }
+    .pikachu{
+        top: 50%;
     }
 }
+
+
+@media screen and (min-width: 2000px) and (max-width: 3000px) {
+    .circulo {
+        height: 25rem;
+        width: 25rem;
+    }
+    .pikachu{
+        left: 50.5%;
+        width: 21vw;
+        height: 20vw;
+    }
+    .boton{
+        height: 100px;
+        width: 250px;
+        font-size: 35px;
+    }
+    .electric-spark1,.electric-spark2 {
+        top: 56%;
+        width: 50px;
+        height: 50px;
+    }
+    .electric-spark1 {
+        left: 38%;
+    }
+    .electric-spark2 {
+        left: 55%;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    
+    h3{
+        font-size: 3rem; 
+    }    
+}
+
+
+@media screen and (max-width: 1440px) {
+    .circulo {
+        top: 58.5%;
+        left: 48.5%;
+    } 
+    .pikachu{
+        top: 55%;
+        width: 310px;
+        height: 280px;
+        object-fit: cover;
+    }
+    .electric-spark1,.electric-spark2 {
+        top: 60%;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .electric-spark1,.electric-spark2 {
+        top: 58%;
+        width: 30px;
+        height: 30px;
+    } 
+    .electric-spark1 {
+        left: 35%;
+    }
+    .electric-spark2 {
+        left: 56%;
+    }
+}
+
+
+@media screen and (max-width: 769px) { 
+    .pikachu{
+        top: 56%;
+        left: 51%;
+    }
+    .electric-spark1 {
+        left: 30%;
+    }
+    .electric-spark2 {
+        left: 58%;
+    }
+}
+
+@media screen and (max-width: 426px) { 
+    .electric-spark1,.electric-spark2 {
+        top: 60%;
+    } 
+    .electric-spark1 {
+        left: 15%;
+    }
+    .electric-spark2 {
+        left: 65%;
+    }
+    .pikachu{
+        left: 53%;
+    }
+    h1{
+        font-size: 25px;
+    }
+    
+    h3{
+        font-size: 20px;
+        padding: 0 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+}
+
+@media screen and (max-width: 321px) { 
+    .pikachu{
+        top: 57%;
+        left: 55%;
+        width: 280px;
+        height: 270px;
+    }
+    .electric-spark1 {
+        left: 5%;
+    }
+    .electric-spark2 {
+        left: 75%;
+    }
+}
+

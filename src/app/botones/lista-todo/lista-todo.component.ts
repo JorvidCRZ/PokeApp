@@ -1,4 +1,4 @@
-import { Component,EventEmitter,inject, Output, ViewChild } from '@angular/core';
+import { Component,EventEmitter,inject, Output, ViewChild,Input } from '@angular/core';
 import { ApiPokemonService } from '../../services/api-pokemon.service';
 import { Pokemon, PokemonGeneral, PokemonResponse } from '../../models/pokemon.model';
 import { Router } from '@angular/router';
@@ -15,14 +15,14 @@ import { NgClass } from '@angular/common';
 export class ListaTodoComponent {
   @Output() pokemonsLoaded = new EventEmitter<PokemonGeneral[]>();
   @Output() mostrarEvent = new EventEmitter<boolean>();
+  @Input() botonTodoActivo: boolean = false;
   @ViewChild(DetallePokemonComponent) detalle!: DetallePokemonComponent; 
   
   pokemonList: Pokemon[] = [];
   private _apiPokemonService = inject(ApiPokemonService);
   private _router = inject(Router);
   public pokemon?: Pokemon;;
-  mostrarLista: boolean = false;
-  botonAllActivo: boolean = false;
+  mostrarLista !:boolean;
   cargando: boolean = false;
 
   trackByIndex(index: number): number {
@@ -37,9 +37,8 @@ export class ListaTodoComponent {
     this.detalle.pokemon?.name;
   }
   
-  mostrar(): void {
-    this.botonAllActivo = !this.botonAllActivo;
-    this.mostrarLista = !this.mostrarLista; 
+  mostrarTodo(): void {
+    this.mostrarLista = true; 
     this.mostrarEvent.emit(this.mostrarLista);
     if (this.mostrarLista) {
       this._apiPokemonService.getAllPokemons().subscribe((data: PokemonResponse) => {

@@ -43,7 +43,8 @@ export class NavegadorComponent implements OnInit {
   isActive: { [key: number]: boolean } = {};
   Message: { [key: number]: string } = {};
   texto: string = '';
-  currentView: 'all' | 'favorites' | 'search' = 'all';
+  botonFavoritoActivo: boolean = false;
+  botonTodoActivo: boolean = false;
 
   private _apiPokemonService = inject(ApiPokemonService);
   public _pokemonService = inject(PokemonServiceService);
@@ -56,13 +57,10 @@ export class NavegadorComponent implements OnInit {
     }, 3000);
   }
 
-
-
   buscarPorEnter(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     const texto = inputElement.value.trim().toLowerCase();
     if (texto) {
-    
       this._apiPokemonService.getPokemonByNameOrId(texto).subscribe({
         next: (pokemon: Pokemon) => {
           this.pokemonList = [{
@@ -79,11 +77,16 @@ export class NavegadorComponent implements OnInit {
     }
   }
 
+
+
+
+
+
+
   resetBusqueda(): void {
     this.pokemonList = [];
     this.mostrarBusqueda = false;
     this.busquedaFallida = false;
-    this.currentView = 'all';
   }
 
   onPokemonsLoaded(pokemons: PokemonGeneral[]): void {
@@ -104,10 +107,16 @@ export class NavegadorComponent implements OnInit {
     this.listaTodoComponent.conseguirnombre();
   }
 
-  toggleListaTodo(): void {
-    this.busquedaFallida = false;
-    this.mostrarListaTodo = !this.mostrarListaTodo;
-    this.mostrarListaFavoritos = false;
+  
+  toggleLista(listType: 'todo' | 'favoritos'): void {
+    console.log('toggleLista', listType);
+    if (listType === 'todo') {
+      this.botonTodoActivo = true;
+      this.botonFavoritoActivo = false;
+    } else if (listType === 'favoritos') {
+      this.botonTodoActivo = false;
+      this.botonFavoritoActivo = true;
+    }
   }
 
   seleccionarPokemon(id: number): void {
@@ -115,6 +124,7 @@ export class NavegadorComponent implements OnInit {
   }
 
   SaveToFavorites(pokemon: PokemonGeneral): void {
+    console.log('SaveToFavorites', pokemon);
     if (pokemon && pokemon.id) {
       this._pokemonService.toggleFavorito(pokemon);
       this.Message[pokemon.id] = this._pokemonService.esFavorito(pokemon.id)
@@ -128,6 +138,6 @@ export class NavegadorComponent implements OnInit {
 
   mostrarFavoritos(): void {
     this.pokemonList = this._pokemonService.getPokemon();
-    this.mostrarListaTodo = false;
   }
+
 }

@@ -105,7 +105,6 @@ app-carga {
   z-index: 1000; 
   left: 0;
   box-shadow: 0 -3px 5px -3px var(--plomo);
-
 }
 
 .lista{
@@ -192,9 +191,133 @@ app-carga {
   width: 100%;
 }
 
-@media screen and (min-width: 1600px) {
+.listapokemon{
+  height: auto;
+}
+
+
+@media screen and (min-width: 2000px) and (max-width: 3000px) {
+  .boton{
+    height: 70px;
+    width: 270px;
+    font-size: 30px;
+    margin: 1rem 6rem 0;
+  }
+
+  i{
+    font-size: 35px;
+  }
+
   .footer{
-    width: 70%;
+    height: 7rem;
+  }
+
+  .ultimo{
+    margin-bottom: 6rem !important;
+  }
+
+  .listapokemons{
+    width: 80%;
+    margin-bottom:1rem;
+  }
+
+  .input-search{
+    height: 70px;
+    width: 79%;
+    font-size: 27px;
+  }
+
+  .sgv{
+    left: -38%;
+  }
+
+  .pokenombre{
+    font-size: 30px !important;
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .footer{
+    height: 5rem;
+  }
+
+  .boton{
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+    margin: 1rem;
+  }
+
+  .input-search{
+    width: 64%;
+  }
+
+   .pokenombre{
+    font-size: 20px !important;
+  }
+
+  .listapokemons{
+    width: 65%;
+    margin-bottom:0.5rem;
+  }
+
+  .ultimo{
+    margin-bottom: 4rem !important;
+  }
+
+  .sgv{
+    left: -30%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .input-search{
+    width: 88%;
+  }
+
+  .listapokemons{
+    width: 90%;
+    margin-bottom:0.5rem;
+  }
+
+  .sgv{
+    left: -42%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .input-search{
+    position: fixed;
+    width: 100%;  
+    border-radius: 0;
+  }
+  .barra{
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    z-index: 100000;
+  }
+
+  .boton{
+    width: 75vw !important;
+    margin: 0.5rem;
+  }
+
+  .listapokemons{
+    width: 105%;
+    margin-bottom:0.5rem;
+  }
+
+  .sgv{
+    position: relative;
+    left: -45%;
+  }
+
+  .footer{
+    height: 9rem;
+    flex-direction: column;
+  }
+
+  .ultimo{
+    margin-bottom: 8rem !important;
+  }
+}
